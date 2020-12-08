@@ -10,9 +10,9 @@ Feature: Filtering products
 
     Examples:
     | size |
-    | S    |
+#    | S    |
     | M    |
-    | L    |
+#    | L    |
 
 
   @filter_by_color

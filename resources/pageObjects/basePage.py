@@ -44,4 +44,4 @@ class BasePage:
 
     def set_parameter_and_click(self, by_locator, param):
         """Performs a mouse click on the element passed to it by locator with parameter"""
-        return self.driver.find_element("xpath", str(by_locator.format(param))).click()
+        return self.driver.find_element("xpath", by_locator.format(param)).click()

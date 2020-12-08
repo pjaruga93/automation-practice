@@ -26,14 +26,11 @@ class ProductsPage(BasePage, Logger):
             self.logger.exception("Timeout exception")
 
     def assert_that_products_size_is_filtered(self, size):
-        pass
+        nr_of_items_to_filter = self.set_parameter_and_get_text(Locators.SIZE_ITEMS_NUMBER[1], size)
+        list_of_products = self.get_elements(Locators.PRODUCT_LIST[1])
+        number_of_products = len(list_of_products)
 
-    """
-    w tym miejscu chcialem zaimplemenotwac asercję po liczbie przefiltrowanych elementów, ze względu na to, że rozmiar
-    jest widoczny tylko z poziomu otwartego produktu i wg mnie mija się z celem otwieranie każdego z osobna
-    i sprawdzanie czy faktycznie taki rozmiar jest dostępny. Z powodu braku mozliwości załadowania listy, pozstawiam
-    tę metodę pustą
-    """
+        assert str(number_of_products) in nr_of_items_to_filter
 
     def assert_that_products_color_is_filtered(self, color):
         filtered_item_color = self.get_href_attribute(Locators.PRODUCT_COLOR_1ST)

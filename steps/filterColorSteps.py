@@ -9,7 +9,7 @@ logger = logging.getLogger('filterColorSteps')
 
 @step('I filter those products by color "{color}"')
 def step_impl(context: PagesType, color):
-    context.pages.products_page.select_product_color(str(color))
+    context.pages.products_page.select_product_color(color)
 
 
 @step('Visible products should be in "{color}" color')

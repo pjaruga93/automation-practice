@@ -46,7 +46,3 @@ def after_step(context, step):
                                                                                                             "-") + ':' + step.name.replace(
                 " ", "-") + ".png"
         )
-
-
-def after_all(context):
-    pass

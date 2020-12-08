@@ -14,7 +14,7 @@ def step_impl(context: PagesType):
 
 @step('I filter those products by size "{size}"')
 def step_impl(context: PagesType, size):
-    context.pages.products_page.select_products_size(str(size))
+    context.pages.products_page.select_products_size(size)
 
 
 @step('Visible products should be in "{size}" size')

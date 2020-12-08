@@ -1,0 +1,4 @@
+[INFO     2020-12-08 20:38:31,178] ('[Check if config is okay][]', 'Base URL is: http://automationpractice.com/index.php')
+[INFO     2020-12-08 20:38:36,560] ('[Check if config is okay][]', 'Starting browser')
+[INFO     2020-12-08 20:38:36,561] ('[Check if config is okay][I am on automationpractice page]', 'Opening: http://automationpractice.com/index.php')
+[INFO     2020-12-08 20:38:40,153] ('[Check if config is okay][I am on automationpractice page]', 'Closing browser')

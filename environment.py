@@ -22,7 +22,7 @@ def before_all(context):
 def before_scenario(context, scenario):
     context.logger.current_scenario = scenario.name
     context.logger.info('Base URL is: ' + os.getenv('E2E_URL', 'http://automationpractice.com/index.php'))
-    context.browser = webdriver.Chrome(r"path\to\chromedriver.exe")
+    context.browser = webdriver.Chrome(r"C:\Users\pjaru\Desktop\chromedriver.exe")
     context.browser.set_window_size(1350, 950)
     context.pages = pages.Pages(context)
     context.logger.info('Starting browser')

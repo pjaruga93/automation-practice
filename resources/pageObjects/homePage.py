@@ -10,7 +10,6 @@ class HomePage(BasePage):
 
     def __init__(self, context):
         super().__init__(context)
-        self.logger = context.logger
 
     def navigate_to_wmns_product(self):
         self.click(Locators.HP_WMNS_SECTION)

@@ -10,9 +10,9 @@ Feature: Filtering products
 
     Examples:
     | size |
-    | s    |
-    | m    |
-    | l    |
+    | S    |
+    | M    |
+    | L    |
 
 
   @filter_by_color
@@ -23,8 +23,12 @@ Feature: Filtering products
      Then Visible products should be in "<color>" color
 
     Examples:
-    | color |
-    | beige  |
-    | black  |
-    | blue   |
-    | yellow |
+    | color  |
+    | Beige  |
+    | Black  |
+    | Blue   |
+    | Yellow |
+    | White  |
+    | Orange |
+    | Green  |
+    | Pink   |

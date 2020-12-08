@@ -1,9 +1,10 @@
 from resources.locators.productsPageLocators import Locators
+from resources.utilities.logger import Logger
 
 from resources.pageObjects.basePage import BasePage
 
 
-class ProductsPage(BasePage):
+class ProductsPage(BasePage, Logger):
     URL = ''
 
     def __init__(self, context):
@@ -11,30 +12,18 @@ class ProductsPage(BasePage):
         self.logger = context.logger
 
     def select_products_size(self, size):
-        self.wait_for_element(Locators.SIZE_FILTERS_HEADING, 10)
-        if 's' in size:
-            self.click(Locators.SIZE_FILTER_S)
-        elif 'm' in size:
-            self.click(Locators.SIZE_FILTER_M)
-        elif 'l' in size:
-            self.click(Locators.SIZE_FILTER_L)
+        self.wait_for_element(Locators.COLOR_FILTERS_HEADING, 10)
+        self.set_parameter_and_click(Locators.SIZE_FILTER[1], size)
 
     def select_product_color(self, color):
         self.wait_for_element(Locators.COLOR_FILTERS_HEADING, 10)
-        if 'beige' in color:
-            self.click(Locators.COLOR_FILTER_BEIGE)
-        elif 'black' in color:
-            self.click(Locators.COLOR_FILTER_BLACK)
-        elif 'blue' in color:
-            self.click(Locators.COLOR_FILTER_BLUE)
-        elif 'yellow' in color:
-            self.click(Locators.COLOR_FILTER_YELLOW)
+        self.set_parameter_and_click(Locators.COLOR_FILTER[1], color)
 
     def wait_for_list_load(self):
         try:
             self.wait_for_element_to_be_not_visible(Locators.FILTERS_LOADING_GIF)
         except TimeoutError:
-            print("Cannot load the list...")
+            self.logger.exception("Timeout exception")
 
     def assert_that_products_size_is_filtered(self, size):
         pass
